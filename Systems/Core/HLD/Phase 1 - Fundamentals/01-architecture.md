@@ -16,7 +16,7 @@ Infrastructure management forces a structural trade-off between operational over
 
 - Serverful optimizes for `continuous`, `high-throughput` workloads with predictable `low-latency` requirements, at the expense of operational toil (managing servers) and resource waste during off-peak hours.
 
-- Serverless eliminates infrastructure management and idle resource waste through automatic scale-to-zero capabilities, at the expens222e of `cold start latency`, connection management constraints, and higher per-unit compute pricing at sustained massive scale.
+- Serverless eliminates infrastructure management and idle resource waste through automatic scale-to-zero capabilities, at the expense of `cold start latency`, connection management constraints, and higher per-unit compute pricing at sustained massive scale.
 
 ---
 
