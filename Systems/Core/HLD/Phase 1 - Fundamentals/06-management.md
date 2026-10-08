@@ -32,15 +32,15 @@ Paging and Virtual Memory solve these problems by abstracting physical memory in
 
 ```
 VIRTUAL ADDRESS SPACE (Process View) PHYSICAL MEMORY (DRAM View)
-┌─────────────────────────────────┐ ┌─────────────────────────────────┐
-│ Virtual Page 0 (4 KB) ├─────►│ Physical Frame 12 (4 KB) │
-├─────────────────────────────────┤ ├─────────────────────────────────┤
-│ Virtual Page 1 (4 KB) │ ┌──►│ Physical Frame 3 (4 KB) │
-├─────────────────────────────────┤ │ ├─────────────────────────────────┤
-│ Virtual Page 2 (4 KB) ├──┘ │ Unallocated / Shared Frame │
-├─────────────────────────────────┤ ├─────────────────────────────────┤
-│ Virtual Page 3 (Not in RAM) ├─────►│ [ Disk Swap Area ] │
-└─────────────────────────────────┘ └─────────────────────────────────┘
+┌─────────────────────────────────┐      ┌────────────────────────────┐
+│ Virtual Page 0 (4 KB)           ├─────►│ Physical Frame 12 (4 KB)   │
+├─────────────────────────────────┤      ├────────────────────────────┤
+│ Virtual Page 1 (4 KB)           │  ┌──►│ Physical Frame 3 (4 KB)    │
+├─────────────────────────────────┤  │   ├────────────────────────────┤
+│ Virtual Page 2 (4 KB)           ├──┘   │ Unallocated / Shared Frame │
+├─────────────────────────────────┤      ├────────────────────────────┤
+│ Virtual Page 3 (Not in RAM)     ├─────►│ [ Disk Swap Area ]         │
+└─────────────────────────────────┘      └────────────────────────────┘
 ```
 
 - **Virtual Address Space**: The independent memory space presented to each process by the OS. On modern 64-bit systems, processes operate within a virtual address space of $2^{48}$ bytes ($256\text{ TB}$).
@@ -63,8 +63,8 @@ $$\text{Virtual Address} = [\text{ Virtual Page Number (VPN) } \mid \text{ Page 
 64-bit Virtual Address:
 63 48 47 39 38 30 29 21 20 12 11 0
 ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐
-│ Unused Sign │ PML4 Index │ PDPT Index │ PD Index │ PT Index │ Page Offset │
-│ Extension │ (9 bits) │ (9 bits) │ (9 bits) │ (9 bits) │ (12 bits) │
+│ Unused Sign  │ PML4 Index   │ PDPT Index   │ PD Index     │ PT Index     │ Page Offset  │
+│ Extension    │ (9 bits)     │ (9 bits)     │ (9 bits)     │ (9 bits)     │ (12 bits)    │
 └──────────────┴──────────────┴──────────────┴──────────────┴──────────────┴──────────────┘
 ```
 
@@ -87,25 +87,25 @@ Performing 4 memory lookups across Page Tables for every single application memo
 
 ```
 [ CPU Instruction (Read Address) ]
-│
-▼
+          │
+          ▼
 ┌───────────────────┐
-│ Check Hardware │
-│ TLB Cache │
+│ Check Hardware    │
+│ TLB Cache         │
 └─────────┬─────────┘
-│
-┌───────┴───────┐
-▼ ▼
+          │
+  ┌───────┴───────┐
+  ▼               ▼
 [ TLB HIT ] [ TLB MISS ]
-(~0.5ns) │
-│ ▼
+| (~0.5ns) │
+|          ▼
 │ ┌───────────────────┐
-│ │ Page Table Walk │ (4 DRAM Lookups ~50-100ns)
+│ │ Page Table Walk   │ (4 DRAM Lookups ~50-100ns)
 │ │ in Hardware (MMU) │
 │ └─────────┬─────────┘
-│ │
-└───────┬───────┘
-▼
+│           │
+└───────┬───┘
+        ▼
 [ Translate Address & Access RAM ]
 ```
 
