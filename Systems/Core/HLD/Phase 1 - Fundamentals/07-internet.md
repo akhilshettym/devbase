@@ -39,10 +39,9 @@ DNS is a hierarchical, distributed database structured like an inverted tree:
                              │
         ┌────────────────────┴────────────────────┐
         ▼                                         ▼
-
-[ .com TLD ] [ .org TLD ]
-│ │
-[ example.com ] [ wikipedia.org ]
+  [ .com TLD ]                              [ .org TLD ]
+        │                                         │
+ [ example.com ]                           [ wikipedia.org ]
 ```
 
 - **Recursive Resolver**: Public/ISP DNS server (e.g., 8.8.8.8, 1.1.1.1) that receives queries from clients and traverses the DNS hierarchy to find the answer.
@@ -68,25 +67,25 @@ DNS is a hierarchical, distributed database structured like an inverted tree:
 When a user types `[https://example.com]``(https://example.com)` into a web browser:
 
 ```
-[ Browser Cache ] ──(Miss)──> [ OS Resolver Cache ] ──(Miss)──> [ Local Router Cache ]
-│
-(Cache Miss)
-│
-▼
-[ Recursive Resolver ]
-(e.g., ISP or 1.1.1.1)
-│
+                           [ Browser Cache ] ──(Miss)──> [ OS Resolver Cache ] ──(Miss)──> [ Local Router Cache ]
+                                                                     │
+                                                               (Cache Miss)
+                                                                     │
+                                                                     ▼
+                                                         [ Recursive Resolver ]
+                                                         (e.g., ISP or 1.1.1.1)
+                                                                     │
 ┌────────────────────────────────────────────────────────────────────┼────────────────────────────────────────────────────────────────────┐
-│ 1. Query Root Server (.) │ 2. Returns IPv4 of .com TLD Server │
-│ 3. Query TLD Server (.com) │ 4. Returns IPv4 of Authoritative Server (ns1.example.com) │
-│ 5. Query Authoritative Server (ns1.example.com) │ 6. Returns A Record: 93.184.216.34 (TTL: 300s) │
+│ 1. Query Root Server (.)                                           │ 2. Returns IPv4 of .com TLD Server                                 │
+│ 3. Query TLD Server (.com)                                         │ 4. Returns IPv4 of Authoritative Server (ns1.example.com)          │
+│ 5. Query Authoritative Server (ns1.example.com)                    │ 6. Returns A Record: 93.184.216.34 (TTL: 300s)                     │
 └────────────────────────────────────────────────────────────────────┴────────────────────────────────────────────────────────────────────┘
-│
-▼
-[ Caches Record for TTL ]
-│
-▼
-[ Returns IP to Browser ]
+                                                                     │
+                                                                     ▼
+                                                         [ Caches Record for TTL ]
+                                                                     │
+                                                                     ▼
+                                                         [ Returns IP to Browser ]
 ```
 
 1. **Local Cache Check**: The OS checks browser cache, local OS DNS cache, and the local `hosts` file.
@@ -128,8 +127,8 @@ How do public DNS providers (Cloudflare `1.1.1.1`, Google `8.8.8.8`) serve reque
 - **BGP Routing to Edge**: When a client sends a packet to `1.1.1.1`, global internet routers automatically direct the packet to the topologically closest data center announcing that IP, distributing traffic geographically and mitigating DDoS attacks.
 
 ```
-                 ┌──► [ London Data Center (Announcing 1.1.1.1) ]
-
+                  ┌──► [ London Data Center (Announcing 1.1.1.1) ]
+                  |
 [ Client (UK) ] ──┴──► (BGP routes packet to shortest network path: London)
 ```
 

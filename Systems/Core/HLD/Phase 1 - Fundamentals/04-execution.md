@@ -54,7 +54,7 @@ Single Core CPU Timeline:
 #### Cost of Context Switching:
 
 - **Direct Cost**: Saving and restoring CPU registers and updating the OS task state.
-- **Indirect Cost**: CPU Cache pollution. Context switching flushes or invalidates L1/L2 CPU caches and Translation Lookaside Buffer (TLB) entries, causing cache misses when the old thread resumes.
+- **Indirect Cost**: CPU Cache pollution. Context switching flushes or invalidates L1/L2 CPU caches and Translation Look aside Buffer (TLB) entries, causing cache misses when the old thread resumes.
 
 #### 2. Multi-Core Simultaneous Execution (Concurrent & Parallel):
 
@@ -80,7 +80,7 @@ Core 2: [ Thread B ] ───────────────────�
 
 - **1:1 Model (Native OS Threads - C++, Java, Rust)**: Every application thread maps directly to an OS kernel thread. High memory footprint ($\sim 1\text{MB}$ stack per thread) and high context switch overhead, but utilizes all CPU cores natively.
 - **N:1 Model (User-Space / Green Threads / Classic Event Loops - Node.js, Python asyncio)**: Multiple application-level threads map to a single OS kernel thread. Fast context switching in user space, but cannot execute across multiple CPU cores in parallel without spawning separate OS processes.
-- **M:N Model (Work-Stealing Scheduler - Go Goroutines, Java Virtual Threads, Erlang Schedulers)**:Maps $M$ lightweight user threads onto $N$ OS kernel threads. Lightweight stack allocation (starting at $\sim 2\text{KB}$), supporting millions of concurrent routines scheduled across all CPU cores with work-stealing algorithms.
+- **M:N Model (Work-Stealing Scheduler - Go Goroutines, Java Virtual Threads, Erlang Schedulers)**: Maps $M$ lightweight user threads onto $N$ OS kernel threads. Lightweight stack allocation (starting at $\sim 2\text{KB}$), supporting millions of concurrent routines scheduled across all CPU cores with work-stealing algorithms.
 
 ---
 
@@ -161,7 +161,7 @@ Coarse-grained Mutexes create thread contention and context-switching overhead u
          │
          ▼
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│ WORK-STEALING RUNTIME SCHEDULER                                               │
+│ WORK-STEALING RUNTIME SCHEDULER                                              │
 │                                                                              │
 │  [ Local Queue 1 ]             [ Local Queue 2 ]             [ Global Queue ]│
 │    G1, G2, G3                    G4, G5, G6                    G7, G8        │

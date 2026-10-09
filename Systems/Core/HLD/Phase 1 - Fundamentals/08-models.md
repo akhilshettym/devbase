@@ -68,17 +68,17 @@ When an application sends a payload (e.g., an HTTP GET request), data moves down
 ```
 SENDING HOST (Encapsulation) RECEIVING HOST (Decapsulation)
 [ Application Data ] [ Application Data ]
-│ ▲
-▼ │
+                                              │ ▲
+                                              ▼ │
 [ L4 Header | Payload ] (TCP Segment) ───────────► [ L4 Header | Payload ]
-│ ▲
-▼ │
+                                              │ ▲
+                                              ▼ │
 [ L3 Header | L4 Header | Payload ] (IP Packet) ──► [ L3 Header | L4 Header | Payload ]
-│ ▲
-▼ │
+                                              │ ▲
+                                              ▼ │
 [ L2 Header | L3 | L4 | Payload | L2 Trailer ] ───► [ L2 Header | L3 | L4 | Payload | L2 Trailer ]
-│ (Ethernet Frame) ▲
-▼ │
+                                              │ (Ethernet Frame) ▲
+                                              ▼            │
 101010101101001010 (Physical Bit Stream) ──────────────────┘
 ```
 

@@ -96,14 +96,14 @@ If BDP is $10\text{ Gbps} \times 50\text{ ms} = 500\text{ Mb}$ ($62.5\text{ MB}$
 
 #### 1. Latency vs. Throughput (The Batching Dilemma):
 
-To maximize throughput, systems aggregate multiple individual events into batches (e.g., Kafka producers, SQL bulk inserts). Batching reduces CPU context switching and network header overhead per record. However, delaying execution until a batch fills directly increases latency for the first item added to the batch.
+To maximize throughput, **systems aggregate multiple individual events into batches** (e.g., Kafka producers, SQL bulk inserts). Batching reduces CPU context switching and network header overhead per record. However, delaying execution until a batch fills directly increases latency for the first item added to the batch.
 
 ```
 High Latency, High Throughput <=========> Low Latency, Low Throughput
 (Large Batches / Async Queues) (Immediate RPC / Per-Request I/O)
 ```
 
-#### n2. Bandwidth vs. Latency:
+#### 2. Bandwidth vs. Latency:
 
 Increasing bandwidth (e.g., upgrading from $1\text{ Gbps}$ to $10\text{ Gbps}$ fiber) increases total payload throughput, but does not reduce latency bounded by physical distance (speed of light in glass $\approx 200\text{ km/ms}$) or application processing logic.
 
