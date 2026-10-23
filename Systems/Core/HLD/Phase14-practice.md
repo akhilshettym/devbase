@@ -1,0 +1,10 @@
+- Youtube
+- Twitter
+- Whatsapp
+- Uber
+- Amazon
+- Dropbox/Google Drive
+- Netflix
+- Instagram
+- Zoom
+- Booking.com/Airbnb
