@@ -304,3 +304,99 @@ Synchronous (API Gateway): When a user requests data, the frontend talks to an A
 Asynchronous (Event Broker): When a state changes (e.g., an order is placed), the Order Service drops a message into an event broker like Kafka or RabbitMQ. The Payment, Inventory, and Notification services pick up that message and do their jobs in the background.
 
 ---
+
+
+# Crafting Clear and Effective Research Requests
+
+## Executive Summary  
+- Define a **focused question**: Start with a broad topic and narrow it to a specific, researchable question. Use the “5 W’s” (Who, What, When, Where, Why) to clarify purpose and scope.  
+- Specify **scope and constraints**: Clearly state boundaries (e.g. time period, location, population) and any limits (budget, time, data access). A manageable scope is “not too broad and not too narrow”.  
+- State **deliverables and audience**: Explicitly describe the expected output (format, length, visuals) and who will use it. Project management defines deliverables as “tangible or intangible outputs, such as reports, software, or services, that must be completed and delivered”.  
+- **Preferred sources and language**: Indicate any source types to use (e.g. official data, academic journals) and the language. Clarify confidentiality or privacy requirements if needed.  
+- Use **actionable templates**: Frame requests with clear instructions (e.g. “Provide a detailed analysis of … including …”) and plan a concise commissioning workflow (see timeline below).  
+
+## Crafting an Effective Research Question  
+To formulate a useful research request, **begin with clarity and focus**.  Effective research starts by **narrowing a broad topic into a specific question**. For example, ask “How do A affect B in context C over time?” rather than a vague prompt. Applying the **5 W’s (Who, What, When, Where, Why)** helps set purpose and boundaries.  According to a research guide, questions should be *clear* and *specific*: they “must be understandable and unambiguous” and avoid vague wording.  They should also be *open-ended*: avoid simple yes/no or trivial questions, and start with words like How/Why/What. 
+
+Next, **define the scope** explicitly.  State what is included or excluded (e.g. time frame, geography, populations) so the research stays focused. The **scope** sets the project’s boundaries – for instance, specifying “data from the last 5 years in India” or “opinions of women executives” helps concentrate the effort.  University of Melbourne guides note a good question has a “manageable scope (not too broad and not too narrow)”.  They explain that “the scope of a research question means the boundaries of what is included” – selecting the right scope is essential.  Too broad a question leads to overwhelming results; too narrow may have insufficient data. 
+
+In addition, **consider feasibility and constraints**.  State any limits on **budget, time, or data access** up front.  A research request should align with available resources.  For instance, cite Ritme’s advice that feasibility “must align with the researcher’s resources, time, and access to the field”.  If the question is too ambitious given the timeline or budget, results will suffer.  So specify deadlines, budget caps, or access limits clearly in the brief.  
+
+Also, **specify deliverables**.  Clarify what output you expect: e.g. a written report, slide deck, or dataset. Include format (Word, PDF, spreadsheet), approximate length (pages/word count), and any needed visuals (charts, maps).  According to project management definitions, *“deliverables”* are the outputs that “must be completed and delivered to fulfill project requirements”.  Naming deliverables (for example, “a 10-page report with tables and figures”) ensures the researcher knows what to produce.  
+
+Finally, **identify the audience and sources**.  State who will use the research (e.g. executives, specialists, or the general public) so the depth and tone match their needs. Also note preferred source types: for example, “use primary or official sources (government data, peer-reviewed studies, industry reports)” to ensure credibility. Mention any confidentiality requirements if the topic is sensitive.  By addressing audience and source expectations, the request becomes actionable.  
+
+## Checklist Template  
+
+| **Field** | **Details / Examples** |
+| --- | --- |
+| **Topic** | (What is the research topic?) |
+| **Objective** | (What is the goal of the research?) |
+| **Key questions** | (Specific questions to answer) |
+| **Scope (Inclusions/Exclusions)** | (What to include or exclude – e.g. time frame, region, population) |
+| **Constraints (Budget, Time, Access)** | (Limitations like budget, deadline, data/access issues) |
+| **Deliverables (Format, Length, Visuals)** | (Expected output: format [report/slides/etc.], length, charts/maps) |
+| **Audience** | (Who will use the research? e.g. managers, technical team, public) |
+| **Priority sources** | (Preferred source types: e.g. official data, academic journals, industry reports) |
+| **Language** | (Language of deliverable – e.g. English (en-IN)) |
+| **Confidentiality/Privacy** | (Any privacy constraints or sensitive data notes) |
+| **Follow-up questions** | (Questions to clarify the brief if needed) |
+
+## Example Research Requests  
+
+- **Example 1 (Simple)**:  
+ - *Vague prompt:* “Tell me about **solar energy**.”  
+ - *Fully specified request:* “Provide a 1,500-word report analyzing solar energy adoption in **rural India** over the past 10 years (2016–2025). Focus on policy changes and market growth, using official sources (e.g. Indian government energy statistics, IEA reports). Include charts or tables showing yearly capacity. The intended audience is energy policymakers. Consider rural electrification targets as background.”  
+
+- **Example 2 (Medium complexity)**:  
+ - *Vague prompt:* “How to improve **employee productivity**?”  
+ - *Fully specified request:* “Conduct a literature review on improving employee productivity in **small IT companies** (10–100 employees) in India. Key questions: (1) What flexible work practices increase productivity? (2) How do training programs impact output? Include examples from the last 5 years of peer-reviewed studies and industry case studies. Deliver a 2,000-word report with summary tables and actionable recommendations for HR managers. Sources should include academic journals and reputable industry reports.”  
+
+- **Example 3 (Complex)**:  
+ - *Vague prompt:* “Study climate change.”  
+ - *Fully specified request:* “Investigate the projected impact of **climate change on agriculture** in *South Asia* (India, Pakistan, Bangladesh) between 2025–2050. Formulate sub-questions: (a) How will temperature and rainfall changes affect rice yields? (b) What adaptation measures are effective? Use climate model data (e.g. IPCC reports) and FAO/USDA crop studies. Provide a 3,000-word analytical report with graphs comparing scenarios. Include recommendations for policymakers in the agricultural sector. Time allowed: 3 weeks.”  
+
+Each improved request clearly states **what** to study, **where/when**, **for whom**, **in what format**, and **under what constraints**. Notice they specify sources (government, academic) and deliverable details.
+
+## Common Pitfalls and How to Avoid Them  
+- **Overly broad or narrow questions:** A question like *“impact of technology”* is too broad; *“Did X increase?”* is too narrow.  Such questions lead to unmanageable or trivial research.  **Avoid** this by narrowing the scope with specifics (e.g. time, location, population). Ensure the topic is neither a massive area nor an isolated detail.  
+
+- **Closed or trivial questions:** Asking *“Does Y cause Z?”* might yield a yes/no answer. Avoid yes/no or common-sense questions. Instead, ask *“How”* or *“Why”* something happens or *“In what ways”* it occurs, to invite analysis and explanation.  
+
+- **Vague language or jargon:** Using unclear terms makes questions confusing. For instance, *“performance improvement”* is vague. Be concrete and unambiguous. As experts note, questions must be *“understandable and unambiguous”*, avoiding jargon or overly general phrasing. Define key terms or examples if needed.  
+
+- **Ignoring constraints:** Failing to mention budget, deadline, or data access can set unrealistic expectations. For example, a one-month deadline for a nationwide survey is often infeasible. **Avoid** by explicitly stating timeframes and resource limits. This ensures the scope is aligned with what can be done.  
+
+- **Unclear deliverables:** Not specifying the output (e.g. “just research and report back”) leads to mismatched results. Always **state the format and length**: for example, “a 10-page PDF report with charts” or “a 15-slide presentation.”  Citing deliverables definitions: project deliverables are the outputs that “must be completed and delivered”.  
+
+- **Neglecting audience:** If you don’t identify the audience, the research may be pitched incorrectly. A detailed technical report for lay readers can fail. **Avoid** this by stating who will use the research, so tone and detail can be tailored to them.  
+
+- **Omitting preferred sources:** When the question lacks source guidance, the results may be shallow. To avoid irrelevant sources, specify if needed, e.g. “use academic journals” or “official government data only.”  
+
+- **No follow-up provision:** If the request is unclear, not inviting clarification can lead to misunderstanding. Encourage the researcher to ask follow-up questions if anything is ambiguous.  
+
+## Recommended Phrasing Templates  
+- “Please **provide a detailed analysis** of *[topic]*, focusing on *[specific aspect]*. Include answers to questions like *[key questions]*.”  
+- “The scope should include *[inclusions]* and explicitly exclude *[exclusions]*.”  
+- “**Deliverable:** a *[format]* (e.g. report, slide deck) of approximately *[length]* words/pages, including *[charts/maps]* as needed.”  
+- “Use credible sources (e.g. *peer-reviewed papers, official statistics, industry reports*).”  
+- “Target the content to *[audience]* (e.g. executives, technical team, general public) and adjust language accordingly.”  
+- “**Constraints:** The research must fit within *[timeline]* and *[budget/resources]*. Ensure any data access permissions are noted.”  
+- “Please **ask clarifying questions** if any part of the request is unclear.”  
+
+## 5-Step Research Commissioning Workflow  
+```mermaid
+timeline
+   title 5-Step Research Commissioning Workflow
+   2026-11-01 : Define topic & objectives
+   2026-11-03 : Clarify scope & constraints
+   2026-11-05 : Formulate key questions
+   2026-11-07 : Specify deliverables & timeline
+   2026-11-09 : Commission research & review
+```
+
+1. **Define topic & objectives:** Start by clearly stating *what* you need to learn and *why* (objectives).  
+2. **Clarify scope & constraints:** Determine what to include/exclude, and note any limitations (time, budget, data access).  
+3. **Formulate key questions:** Break the topic into specific research questions that guide the investigation.  
+4. **Specify deliverables & timeline:** Describe the expected output format/length and set a realistic schedule for completion.  
+5. **Commission research & review:** Assign or request the research and be ready to discuss findings or adjust scope based on follow-up questions.
