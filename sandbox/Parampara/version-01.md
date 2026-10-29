@@ -1,4 +1,4 @@
-## Parampara — Product Vision & FeatureBlueprint
+## Parampara — Product Vision & Feature Blueprint
 
 `Version 1.0` · Draft for client review · `Scope`: features, business rules and user journeys (technical architecture follows in the next stage)
 
