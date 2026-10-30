@@ -224,3 +224,72 @@ Each step is triggered by measured load, not guesswork.
 6. Shipping aggregator.
 7. WhatsApp and SMS providers, and the lead time for DLT registration.
 8. Team size and timeline, which decide how much of the Step 0 tooling to adopt.
+
+---
+
+While your data footprint (200-300 images, 1,000 users) is incredibly lightweight and easily fits within the capacity limits of most free tiers, not everything on this list will be completely free.
+
+For an Indian e-commerce marketplace like Parampara, there are commercial restrictions, geographic pricing quirks, and architectural bottlenecks you need to watch out for.
+
+Here is the reality check on what is free, what isn't, and what will break if you try to force it into a free tier.
+
+1. The "Absolutely Not Free" Zone
+Mobile OTP (SMS) in India: You cannot do this for free. Indian telecom regulations require DLT registration for businesses to send SMS, which has an upfront cost (usually around ₹5,900).Furthermore, there is no true "free tier" for Indian SMS. Providers like MSG91 will charge per SMS.
+
+Warning on Firebase Auth: If you use Firebase for Phone Auth, Google Cloud Identity Platform charges roughly ₹6 to ₹7 per SMS for Indian numbers. It is one of the most expensive ways to verify Indian phone numbers.
+
+WhatsApp Notifications: The WhatsApp Business API (Gupshup, Interakt) does not have a free tier for outbound business-initiated messages. You will pay per conversation.
+
+Payments & Shipping: Razorpay, Cashfree, and Shiprocket do not have fixed monthly server fees, but they charge per transaction (usually around 2% for payments) and per shipment.
+
+2. The "Free, But Legally Risky" Zone
+Vercel for Frontend: Vercel's "Hobby" plan is famously generous and perfectly handles Next.js, but its Terms of Service strictly prohibit commercial use. Because Parampara is a revenue-generating marketplace, deploying it on Vercel's free tier violates their terms. They can (and do) suspend e-commerce sites on Hobby plans.
+
+Alternative: Host the Next.js frontend on Cloudflare Pages or Netlify, or deploy it alongside your backend on a virtual machine.
+
+3. The "Technically Free, But Will Crash" Zone
+AWS Free Tier (Backend & DB): AWS gives you 750 hours a month of a t2.micro or t3.micro EC2 instance (1 vCPU, 1GB RAM) and a similar micro RDS instance for 12 months only.
+
+The Bottleneck: Running Node.js (NestJS), a background worker (BullMQ), an in-memory datastore (Redis), and a self-hosted CMS (Strapi) on a single 1GB RAM server will almost certainly result in Out-of-Memory (OOM) crashes. NestJS and Strapi are both memory-heavy.
+
+The Fix: Use managed free tiers elsewhere so your AWS EC2 instance only has to run your core NestJS API.
+
+4. The "Safe & Free" Zone (Will handle your scale easily)
+Images & Documents: Cloudflare R2 gives you 10GB of storage and 10 million reads per month free forever (no 12-month expiry like AWS S3). 300 product images will take up less than 1GB.
+
+Search: Algolia’s free tier allows up to 10,000 requests/month and 1 million records. Meilisearch Cloud also offers a solid free tier. With 300 products, you will barely make a dent in either.
+
+Email: Resend offers 3,000 free emails per month, which is plenty for 1,000 users making occasional purchases.
+
+Identity (Social/Email): Firebase Auth and Auth0 are completely free for Email, Password, and Google Sign-in at this scale (Auth0 gives you 7,500 active users free). Just avoid their SMS options.
+
+How to optimize this stack for near-₹0 startup costs:
+If you want to keep costs as close to zero as possible for year one, while keeping the application stable and legal, I recommend these adjustments:
+
+Drop Vercel for Netlify or Cloudflare Pages: They have more lenient commercial-use policies on their entry tiers compared to Vercel.
+
+Use managed Database & Redis free tiers: Instead of AWS RDS and self-hosted Redis, use Supabase or Neon.tech for a permanent managed PostgreSQL free tier, and Upstash for a permanent Serverless Redis free tier (10,000 commands/day). This offloads heavy databases from your backend server.
+
+Use a hosted CMS: Instead of trying to cram self-hosted Strapi onto a 1GB server, use Sanity.io. Their free tier is incredibly generous, permanently free, and handles the CMS hosting for you.
+
+Rethink Login: Push users toward Google Sign-In and Email OTPs first. Only enable Mobile SMS OTP if the business is willing to pay the DLT registration and per-message fees from day one.
+
+---
+
+- Let's use a modular monolith. Let me know how am I supposed to structure the repository. 
+- How should I be initializing the NextJs with typescript for frontend and NodeJs + NestJs for backend.
+- Let's use PostgreSQL for database, Redis foe caching, Meilisearch for search, Object Storage am still not sure what to do with this. 
+
+
+- First let's start with login signin with Firebase the authentication part and google sign in. the OTP part is actually not required. 
+- Let's leave out the payment gateway part as well.
+- Let's finish the authentication part first and then side by side lets build the frontend as well. 
+- So first let's start with the UI's Loader page, and sign-in/Register page.
+- Once these three pages are created let's work on the Authentication part.
+- Once Auth is completed, let's work on Home page. And in Home Page Lets build the headers, Footers, CMS configurations, Explore by and so on let it be on standBy. 
+- These many things should done first and then we can continue with the rest of the wiring is what I feel. We can do this as Phase 1, Phase 2 will be the backend part where we will be wiring the products and its details.
+
+- Note while prepping for the Sign-in and Register we will have to make up three parts. One is for Customer/Collector, Seller/Artist and the Admin who will be approving wtr the artist is legit the paintings are of good quality and so on.
+
+- I should be able to add more and auth should be proper without any issues and later on I should be able to scale up cleanly. As in protected routes and protected pages and so on. A customer/collector should land on Customer page only, A Seller should land on a seller specific page only and me as Admin should be able to have a bulls eye view of what's happening throughout the site, monitoring, the inventory, orders and so on. 
+
