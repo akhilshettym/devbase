@@ -328,19 +328,19 @@ Finally, **identify the audience and sources**.  State who will use the research
 
 ## Checklist Template  
 
-| **Field** | **Details / Examples** |
-| --- | --- |
-| **Topic** | (What is the research topic?) |
-| **Objective** | (What is the goal of the research?) |
-| **Key questions** | (Specific questions to answer) |
-| **Scope (Inclusions/Exclusions)** | (What to include or exclude – e.g. time frame, region, population) |
-| **Constraints (Budget, Time, Access)** | (Limitations like budget, deadline, data/access issues) |
-| **Deliverables (Format, Length, Visuals)** | (Expected output: format [report/slides/etc.], length, charts/maps) |
-| **Audience** | (Who will use the research? e.g. managers, technical team, public) |
-| **Priority sources** | (Preferred source types: e.g. official data, academic journals, industry reports) |
-| **Language** | (Language of deliverable – e.g. English (en-IN)) |
-| **Confidentiality/Privacy** | (Any privacy constraints or sensitive data notes) |
-| **Follow-up questions** | (Questions to clarify the brief if needed) |
+| **Field**                                  | **Details / Examples**                                                            |
+| ------------------------------------------ | --------------------------------------------------------------------------------- |
+| **Topic**                                  | (What is the research topic?)                                                     |
+| **Objective**                              | (What is the goal of the research?)                                               |
+| **Key questions**                          | (Specific questions to answer)                                                    |
+| **Scope (Inclusions/Exclusions)**          | (What to include or exclude – e.g. time frame, region, population)                |
+| **Constraints (Budget, Time, Access)**     | (Limitations like budget, deadline, data/access issues)                           |
+| **Deliverables (Format, Length, Visuals)** | (Expected output: format [report/slides/etc.], length, charts/maps)               |
+| **Audience**                               | (Who will use the research? e.g. managers, technical team, public)                |
+| **Priority sources**                       | (Preferred source types: e.g. official data, academic journals, industry reports) |
+| **Language**                               | (Language of deliverable – e.g. English (en-IN))                                  |
+| **Confidentiality/Privacy**                | (Any privacy constraints or sensitive data notes)                                 |
+| **Follow-up questions**                    | (Questions to clarify the brief if needed)                                        |
 
 ## Example Research Requests  
 
