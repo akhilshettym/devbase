@@ -1,4 +1,4 @@
-# Taanjika --- Moola Backend & Authentication Architecture
+## Taanjika --- Moola Backend & Authentication Architecture
 
 > **Document purpose:** Consolidated architecture review and
 > implementation guide for the Taanjika authentication and backend
@@ -87,40 +87,39 @@ it.
 
 ## 1.1 Current-state overview
 
-  -----------------------------------------------------------------------
   Area                                Assessment
-  ----------------------------------- -----------------------------------
-  PostgreSQL integration              Implemented foundation
+  -----------------------------------------------------------------------
+  `PostgreSQL integration`:              Implemented foundation
 
-  Firebase Admin integration          Implemented foundation
+  `Firebase Admin integration`:          Implemented foundation
 
-  Firebase token verification         Implemented
+  `Firebase token verification`:         Implemented
 
-  User profile provisioning           Basic implementation
+  `User profile provisioning`:           Basic implementation
 
-  Registration endpoint               Basic implementation
+  `Registration endpoint `:              Basic implementation
 
-  Email verification enforcement      Partial; route application needs
+  `Email verification enforcement`:      Partial; route application needs
                                       verification
 
-  Role-based authorization            Partial
+  `Role-based authorization`:            Partial
 
-  Admin bootstrap                     Implemented; security and
+  `Admin bootstrap`:                     Implemented; security and
                                       operational review required
 
-  Artist application lifecycle        Basic/placeholder implementation
+  `Artist application lifecycle`:        Basic/placeholder implementation
 
-  Seller activation and subscriptions Not implemented in the reviewed
+  `Seller activation and subscriptions`: Not implemented in the reviewed
                                       structure
 
-  Permission-based authorization      Not implemented in the reviewed
+  `Permission-based authorization`:      Not implemented in the reviewed
                                       structure
 
-  Audit logging                       Not shown
+  `Audit logging`:                       Not shown
 
-  Automated authentication tests      Not shown
+  `Automated authentication tests`:      Not shown
 
-  Migration runner/history            Not shown
+  `Migration runner/history`:            Not shown
   -----------------------------------------------------------------------
 
 These assessments are based on the material previously shared. "Not
@@ -1088,13 +1087,21 @@ The response should provide relevant information such as:
   Information                 Purpose
   --------------------------- --------------------------------------
   Internal user ID            Taanjika/PostgreSQL identity
+
   Email                       Current account email
+  
   Email verification          Verification state
+  
   First and last name         Profile information
+  
   Account status              Active, suspended or deactivated
+  
   Roles                       Broad account roles
+  
   Artist application status   Onboarding progress
+  
   Seller status               Whether selling capability is active
+  
   Permissions                 Actions currently allowed
 
 Avoid exposing internal-only identifiers or sensitive implementation
